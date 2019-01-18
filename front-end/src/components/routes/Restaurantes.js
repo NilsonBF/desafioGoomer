@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
 
 import CustomCard from "../restaurantes/CustomCard.js";
+import * as Boots from "react-bootstrap";
+import { Grid } from "@material-ui/core";
 
 class Restaurantes extends Component {
   constructor(props) {
@@ -45,14 +46,13 @@ class Restaurantes extends Component {
   render() {
     const { ...s } = this.state;
     return (
-      <div>
-        <Grid>
-          <Row className="show-grid">
-            {!!s.items &&
-              s.items.map((el, idx) => <CustomCard key={idx} obj={el} />)}
-          </Row>
+      
+      <Boots.Grid>
+        <Grid container spacing={24}>
+          {!!s.items &&
+            s.items.map((el, idx) => <CustomCard key={idx} obj={el} />)}
         </Grid>
-      </div>
+      </Boots.Grid>
     );
   }
 }
