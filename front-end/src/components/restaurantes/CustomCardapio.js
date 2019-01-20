@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
-import * as MT from "@material-ui/core";
 
 import { observer } from "mobx-react";
 import appState from "../../store/appState";
