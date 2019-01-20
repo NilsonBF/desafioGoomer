@@ -1,46 +1,43 @@
 import React, { Component } from "react";
+import { observer } from "mobx-react";
 
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import { Typography, Grid } from "@material-ui/core";
+import {
+  Grid,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia
+} from "@material-ui/core";
+import { Button, Glyphicon } from "react-bootstrap";
 
-import * as Icones from "@material-ui/icons";
-
-class CustomCard extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-  }
-
-  render() {
-    return (
-      <Grid item xs={12} sm={4} md={3}>
-        <Card>
+const CustomCard = observer(
+  class CustomCard extends Component {
+    render() {
+      return (
+        <Grid item xs={12} sm={4} md={3}>
+          <Card style={{minWidth:260}}>
             <CardMedia
-              component='img'
+              component="img"
               alt={this.props.obj.name}
-              height='150'
+              height={this.props.height}
               image={this.props.obj.image}
               title={this.props.obj.name}
             />
             <CardContent>
-              <Typography gutterBottom variant='h5' component='h2'>
-                {this.props.obj.name}
-              </Typography>
+              <h4>{this.props.obj.name}</h4>
+              <h5>{this.props.obj.address}</h5>
             </CardContent>
-          <CardActions >
-            <Button color='primary' size="large">
-              <Icones.RestaurantMenuTwoTone />
-              &nbsp;Ver Cardápio
-            </Button>
-          </CardActions>
-        </Card>
-      </Grid>
-    );
+            <CardActions>
+              <Button block bsStyle="link" onClick={this.props.onClick}>
+                <Glyphicon glyph="cutlery" />
+                &nbsp;Ver Cardápio
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      );
+    }
   }
-}
+);
 
 export default CustomCard;
