@@ -15,7 +15,7 @@ const App = observer(
         <div className="App">
           <CustomNavbar />
           <Grid>
-            {([undefined, null, ""].includes(appState.userName) && (
+            {([undefined, null, ""].includes(appState.userName.trim()) && (
               <Home />
             )) || <Restaurantes />}
           </Grid>

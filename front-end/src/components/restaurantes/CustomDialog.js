@@ -21,18 +21,18 @@ const CustomDialog = observer(
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
           fullWidth
-          maxWidth="xl"
+          maxWidth="md"
         >
           <MT.DialogContent>
             {!!appState.cardapio.itensCardapio && (
-              <MT.Grid container spacing={0}>
+              <MT.Grid container spacing={16}>
                 <MT.Grid item sm={4}>
                   <CustomCard
                     obj={appState.cardapio.restaurante}
                     height="150"
                   />
                 </MT.Grid>
-                <MT.Grid item sm={8}>
+                <MT.Grid item sm={6}>
                   {(appState.cardapio.itensCardapio.length > 0 && (
                     <CustomCardapio arr={appState.cardapio.itensCardapio} />
                   )) || (
@@ -55,14 +55,3 @@ const CustomDialog = observer(
 );
 
 export default CustomDialog;
-
-/**
-{(appState.cardapio.itensCardapio.length > 0 && (
-                    <CustomCardapio arr={appState.cardapio.itensCardapio} />
-                  )) || (
-                    <Jumbotron>
-                      <h2>Cardápio indisponível!</h2>
-                      <h3>Tente novamente mais tarde.</h3>
-                    </Jumbotron>
-                  )}
- */

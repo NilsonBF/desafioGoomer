@@ -1,7 +1,7 @@
 import { observable } from "mobx";
 
 const altera_UserName = (param) => {
-  appState.userName = param;
+  appState.userName = param.trim();
 };
 
 const toggle_Dialog = () => {

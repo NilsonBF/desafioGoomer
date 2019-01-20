@@ -22,7 +22,7 @@ const CustomUsername = observer(
     render() {
       return (
         <Navbar.Collapse>
-          {([undefined, null, ""].includes(appState.userName) && (
+          {([undefined, null, ""].includes(appState.userName.trim()) && (
             <Navbar.Form pullLeft>
               <FormGroup>
                 <FormControl
