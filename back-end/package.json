@@ -1,0 +1,19 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "DesafioGoomerBackEnd",
+  "main": "index.js",
+  "scripts": {
+    "run": "nodemon"
+  },
+  "author": "Nilson Bertola",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.5",
+    "mocha": "latest"
+  }
+}
