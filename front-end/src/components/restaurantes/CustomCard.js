@@ -25,12 +25,15 @@ const CustomCard = observer(
             <h4>{this.props.obj.name}</h4>
             <h5>{this.props.obj.address}</h5>
           </CardContent>
-          <CardActions>
-            <Button block bsStyle='link' onClick={this.props.onClick}>
-              <Glyphicon glyph='cutlery' />
-              &nbsp;Ver Cardápio
-            </Button>
-          </CardActions>
+          {!!this.props.onClick
+            &&
+            (<CardActions>
+              <Button block bsStyle='link' onClick={this.props.onClick}>
+                <Glyphicon glyph='cutlery' />
+                &nbsp;Ver Cardápio
+              </Button>
+            </CardActions>)
+          }
         </Card>
       );
     }
