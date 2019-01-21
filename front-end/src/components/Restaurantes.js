@@ -16,7 +16,6 @@ const clickVerCardapio = restaurante => {
           itensCardapio: result
         };
         appState.altera_Cardapio(cardapio);
-        console.log(cardapio.itensCardapio.length);
         appState.toggle_Dialog();
       },
       error => {
@@ -79,10 +78,10 @@ class Restaurantes extends Component {
           </Jumbotron>
         </Grid>
         <Grid item>
-          <Grid container direction='row' spacing={16}>
+          <Grid container direction='row' spacing={16} alignItems="center" justify="center">
             {!!s.items &&
               s.items.map((el, idx) => (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={idx} alignItems="center" justify="center">
+                <Grid item xs={12} sm={6} md={4} lg={3} key={idx} >
                   <CustomCard
                     obj={el}
                     onClick={() => clickVerCardapio(el)}
