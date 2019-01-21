@@ -16,14 +16,9 @@ const db = mongo.connection;
 const port = process.env.PORT || 16000;
 
 api.listen(port, () => {
-  console.log(`WebService rodando na porta: ${port}`);
+    console.log(`WebService rodando na porta: ${port}`);
 });
 
 api.use("/api", rotas);
-
-api.post('/teste', (req,res) => {
-    console.log(req.body)
-    res.send('ok')
-})
 
 module.exports = api

@@ -1,5 +1,5 @@
-const strConnMongoLocal = `mongodb+srv://NilsonBertola:!Q1q!Q1q@cluster0-hzb2f.mongodb.net/test?retryWrites=true`;
+const strConnMongoLocal = `mongodb://localhost:27017`;
 
 module.exports = {
-  strConnMongoLocal
+    strConnMongoLocal
 };
