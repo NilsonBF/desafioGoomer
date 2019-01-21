@@ -86,9 +86,9 @@ exports.update = (req, res) => {
         message: err
       });
     } else {
-      user.login = req.body.login;
-      user.email = req.body.email;
-      user.nome = req.body.nome;
+      user.login = req.body.login ? req.body.login : user.login;
+      user.email = req.body.email ? req.body.email : user.email;
+      user.nome = req.body.nome ? req.body.nome : user.nome;
       user.save(error => {
         if (error) {
           res.json({
